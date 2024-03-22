@@ -6,7 +6,7 @@ const Home = () => {
             id: 1,
             title: "Introduction to JavaScript",
             body: "JavaScript is a popular programming language used for web development.",
-            author: "John Doe "
+            author: "John Doe"
           },
           {
             id: 2,
