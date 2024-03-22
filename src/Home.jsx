@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 const Home = () => {
     const [blogs , setBlogs] = useState([
         {
