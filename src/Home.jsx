@@ -21,9 +21,6 @@ const Home = () => {
             author: "Michael Johnson"
           }
     ])
-    const fun = (name) => {
-        console.log(name)
-    }
     return ( <div className="home">
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
