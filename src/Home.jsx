@@ -1,39 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
+const link = 'https://ubiquitous-rotary-phone-x554744v7w6g3xq6-8000.app.github.dev/blogs'
+const message = 'set port to public temporary'
 const Home = () => {
-    const [blogs , setBlogs] = useState([
-        {
-            id: 1,
-            title: "Introduction to JavaScript",
-            body: "JavaScript is a popular programming language used for web development.",
-            author: "John Doe"
-          },
-          {
-            id: 2,
-            title: "Advanced JavaScript Techniques",
-            body: "Learn about closures, promises, and other advanced JavaScript concepts.",
-            author: "Jane Smith"
-          },
-          {
-            id: 3,
-            title: "JavaScript Frameworks Comparison",
-            body: "Compare popular JavaScript frameworks like React, Angular, and Vue.",
-            author: "Michael Johnson"
-          }
-    ])
-    const handleDelete = (id) => {
-      const newBlogs = blogs.filter(blog => blog.id !== id)
-      setBlogs(newBlogs) 
-    }
+  const [blogs, setBlogs] = useState(null)
 
-    return ( <div className="home">
-          <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
-          
-    </div> );
+  useEffect(() => {
+    fetch(link)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setBlogs(data);
+      })
+  }, [])
+
+  return (
+    <div className="home">
+      {blogs && <BlogList blogs={blogs} />}
+    </div>
+  );
 }
  
 export default Home;
-
-
- 
- 
