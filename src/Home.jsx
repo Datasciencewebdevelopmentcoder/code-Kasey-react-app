@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 const link = 'https://ubiquitous-rotary-phone-x554744v7w6g3xq6-8000.app.github.dev/blogs'
-const message = 'set port to public temporary'
+const message = ' run [npx json-server data/db.json --port 8000 in new terminal] and runset port to public temporary'
 const Home = () => {
   const [blogs, setBlogs] = useState(null)
 
