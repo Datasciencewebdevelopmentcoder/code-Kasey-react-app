@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 const NotFound = () => {
     return(
         <div className="not-found">
         <h2>Sorry</h2>
-        <p>That page cannot be found</p>
+        <p>That page cannot be found at this time</p>
         <Link to='/'> Back to the Homepage</Link>
         </div>
     );
